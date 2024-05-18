@@ -164,3 +164,6 @@ NOR TEST CELL VIEW
 NOR SIMULATION WITH SPECTRA
 
 ![WPS Photos(11)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/ca0d0123-8544-4693-9377-1702e4058300)
+
+![readme](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/102887c7-1ddf-4ebc-9337-537f57af75ff)
+
