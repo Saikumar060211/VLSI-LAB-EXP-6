@@ -54,7 +54,113 @@ Simulation -- Net list and Run
 
 # INVERTER
 
-![readme](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/102887c7-1ddf-4ebc-9337-537f57af75ff)
-
 
 ![WPS Photos(1)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/c2d18432-64a1-4b50-98e0-09d75461f33e)
+
+
+ANALOG SIMULATION WITH SPECTRA:
+
+Starting the simulation environment:
+
+1.In the Inverter-test schematic window execute launch – ADEL. The variable virtuoso analog design environment (ADE) simulation window appears.
+Choosing a simulator:
+
+1.In the simulation window (ADE) execute setup – simulator / directory / host.
+
+2.In the choosing simulator form, set the simulator field to specra and click ok.
+
+3.In the simulation window (ADE) execute the setup model libraries.
+
+To complete, move the cursor and click ok.
+
+Choosing Analysis:
+
+1.Click the choose- Analysis icon in the simulation window (ADE).
+
+2.The choosing analysis form appears.
+
+3.To Setup the transient analysis.
+
+a.In the analysis section select tron.
+
+b.Set the stop time as 100ns
+
+c.Click at the moderate or enabled button and the bottom and then click apply.
+
+4.To set for DC analysis
+
+a.In the analysis section select DC.
+
+b.Turn on save DC operating point.
+
+c.Turn on the component parameters.
+
+d.Double click the select Vpulse source or Type V0 (capital V zero).
+
+e.Select the DC voltage in the select window parameter and click in the form start and stop voltages are 0 to 1.8.
+
+f.Select the enable button and click apply and then click ok.
+
+Selecting output for plotting:
+
+1.Execute the o/p’s to be plotted  -select on sschematic in the simulation window.
+
+2.Follow the prompt at the bottom. Click on the o/p net vout input vin of the inverter. Press esc with the cursor after selecting.
+
+Running the simulation:
+
+1.Execute the simulation Netlist and run in the simulation window to start the simulation on the icon. This will create the netlist as well as run the simulation.
+
+2.When the simulation finishes the transient and DC plots automatically will be popped up along with netlist.
+
+
+
+![WPS Photos(1)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/d2b0da9d-e05e-4387-8ebd-5e599458b297)
+
+
+![WPS Photos3](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/94933613-5e83-4c98-85c7-3c61a462ad73)
+
+
+
+CMOS NAND GATE
+
+NAND SCHmatic
+
+![WPS Photos6](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/36c161a0-eb38-49b6-901b-6971e3616a1a)
+
+
+NAND TEST CELL VIEW
+
+![WPS Photos7](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/f46287ff-b86f-4b19-a593-9f85c4709baf)
+
+
+NAND SIMULATION WITH SPECTRA
+
+
+![WPS Photos8](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/45dfa853-6889-4368-b2cf-5374378a6140)
+
+
+
+
+
+
+
+CMOS NOR GATE
+
+NOR SCHEMATIC
+
+![WPS Photos(9)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/2169a189-aeb8-43e2-9c03-4cb13912a342)
+
+
+
+
+
+
+NOR TEST CELL VIEW
+
+![WPS Photos(10)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/ab9d82cf-6b2b-47b8-af58-f46a9e71f6d3)
+
+
+NOR SIMULATION WITH SPECTRA
+
+![WPS Photos(11)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/ca0d0123-8544-4693-9377-1702e4058300)
