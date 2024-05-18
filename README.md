@@ -7,53 +7,112 @@ To design and simulate the CMOS inverter and observe the DC and transient respon
  1.Laptop with MobaXterm
  2.Cadence tool
 
+
 # PROCEDURE
-# Procedure for Commands to get into Cadence
-1. Right Click and open the terminal window
-2. Type the following commands as follows and press enter. i) tcsh ii) source /home/install/cshrc iii)
-virtuoso
 
-# Procedure for Schematic simulation using Cadence
-1. Now two windows must open i)virtuoso/command interpreter window ii)”Whats New…”
-2. Close the 2nd window
-3. Use 1st window i.e virtuoso window(CIW) for further processing. i) Create a New Library ii) Create
-Schematic Cell view. iii) Create the Symbol for schematic Cell view. iv) Create the test Cell view. v)
-Analog simulation by spectre
+SCHEMATIC ENTRY:
 
-# Procedure for Creating New Library
-a) File –New – Library b) Name : Give name for ur library Ex: VLSILAB , Enable Attach to an existing
-technology library, Click OK c) Attach the library to the technology library gpdk045.Click OK
+Creating a new library:
 
-# Create Schematic Cell view
-a) Go to 1st window i.e virtuoso(CIW) b) File-New-Cell view c) Setup the new file form, Library: Select
-the one you a created. Cell : Give the experiment name Ex: Inverter View: Schematic d) Type: Schematic
-press OK e) Add the required components from the libraries and make the connections. f) Go to
-instance fixed menu or use shortcut key “I” from keypad to go instances Click on browse. This opens
-the library browser ow select the appropriate library for components like Gpdk045,nmos, pmos g) Analog library Vdd, Gnd, Vcc, Vpulse, Vsin h) Make the connections by using fixed narrow wire key i)
-Click Check and Save button
+1.In the library manager, execute File - New library. The new library form appears.
 
-# Creating the Symbol for schematic Cell view
-a. In the schematic window, execute Crate – Cell view – From Cell view The cell view from cell view
-window appears Check Lib Name, Cell Name, From View name must be schematic Press ok b. Now
-Symbol generation form appears. Click Ok If No changes required c. A new window with with default
-symbol is created. d. Edit the symbol if you want to give actual symbol shape else continue. i. Execute
-Create-Cell view-from cell view ii. Library Name and Cell Name must be same which you have used for
-schematic. Press OK iii. Check for the position of pin side.Prss OK iv. Edit for the shape by CreateShape-Choose required options to edit
+2.In the new library form, type ‘my design lib’ in the name section.
 
-# Creating the new test cell view
-a) Go to CIW window, Execute File-New-Cell view b) Setup the new file form Library: Select the one
-you a created. Cell: Cell name must be different from the name used in schematic cell view. Ex:
-Inverter_test View: Schematic Type: Schematic press OK Analog simulation by SPECTRE. a. In test cell
-view window b. Launch – ADE L(Analog Design Environment) c. Execute Setup—
-Simulation/directory/Host A new window opens d. Set the simulation window to spectre and click ok e.
-Execute Setup-Model Library. Anew window opens, Check of gpdk.scs as lib and section type as stat
-then press OK. f. Execute Analysis – Choose. A window opens. g. Select the type and set the
-specifications and press OK h. Execute Output s—to be plotted – Select on Schematic i. Then Select the
-INPUT WIRE(Vin ) and OUTPUT WIRE(Vout) from your test Schematic using mouse j. Execute
-Simulation -- Net list and Run
+3.In the field of directory section, verify that the path to the library is set to ~/Database / Cadence- analog – lab –bl3 and click ok.
 
-# INVERTER
+4.In the next ‘technology file for new library form select option attach to an existing tech file and click ok.
 
+5.In the ‘attach design library to technology file’ form, select gpdk045 form the cyclic field and click ok.
+
+6.After creating a new library you can verify it from the library manager.
+
+7.If you right click on the ‘my design lib’ and select properties, you will find that gpdk045 library is attached as techlib to ‘my design lib’.
+
+Creating a schematic cell view:
+
+1.In the CIW or library manager, execute file – new – cell viw.
+
+2.Setup the new file form as follows, Do not edit the library path file and the above might be different from the path shown in your form.
+
+3.Click ok when done the above setting. A black schematic window for the inverter design appears.
+
+Adding components to schematic:
+
+1.In the inverter schematic window, click the instance fixed menu icon to display the add instance form.
+
+2.Click on the browse button. This opens up a library browser from which you can select components and the symbol view.
+
+3.After you complete the add instance form move your cursor to the schematic window and click left to place a component.
+
+LIBRARY NAME	CELL NAME
+
+gpdk045	PMOS
+
+gpdk045	NMOS
+
+
+
+
+4.This is a table of components for building the inverter schematic.
+
+5.After entering components, click cancel in the add instance form or press ESC with your cursor in the schematic window.
+
+	![readme](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/102887c7-1ddf-4ebc-9337-537f57af75ff)
+
+
+Adding pins to schematic:
+
+1.Click the pin fixed menu icon in the schematic window. You can execute create pin or press ‘p’.
+
+2.Add pin form appears. Type the following in the ADD pin form in the next order leaving space between the pin.
+PIN NAMES	DIRECTION
+Vin,Vdd,Vss	Input
+Vout	Output
+
+3.Select cancel and then the schematic window enter window file or press the f bind key.
+
+Adding wires to schematic:
+
+1.Click the wire (narrow) icon in the schematic window.
+
+2.In the schematic window click on a pin of one of your components as the first point for your wiring. A diamond shape appears over the starting point of this wire.
+
+3.Follow the prompts at the bottom of design window and click left on the destination point for your wire. A wire is routed between the source and destination points.
+
+4.Complete the wiring as shown in the figure and when done wiring press ECS key in the schematic window to cancel wiring.
+
+
+Saving the design:
+
+	Click the check and save icon in the schematic editor window observe CIW output for any errors.
+
+BUILDING THE INVERTER TEST DESIGN:
+
+Creating the inverter test cell view:
+
+1.In the CIW or library manager, execute file – new – cell view.
+
+2.Setup the newfile as shown below.
+
+3.Click ok when done. A blank schematic window for the inverter test design appears.
+
+4.Using the components list and properties/ comments in this table build the inverter test schematic.
+~~~
+LIBRARY NAME	CELL VIEW NAME	PROPERTIES/COMMENTS
+My design lib	Inverter	Symbol
+Analog lib	Vpulse	Voltage1 = 0, Voltage2 = 1.8, delay Time = 0,
+Rise time=Fall time=1ns
+Period=20ns
+Analog lib	Vdc, gnd	Vdc = 1.8v
+~~~
+
+5.Add the above components using create – instance or by pressing I.
+
+6.Click the wire (narrow) icon and wire your schematic.
+
+7.Click create wire name or press c to name the i/p (vsin) and output wires as in below schematic.
+
+8.Click on the check and save icon to save the design.
 
 ![WPS Photos(1)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/c2d18432-64a1-4b50-98e0-09d75461f33e)
 
@@ -159,11 +218,3 @@ NOR SCHEMATIC
 NOR TEST CELL VIEW
 
 ![WPS Photos(10)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/ab9d82cf-6b2b-47b8-af58-f46a9e71f6d3)
-
-
-NOR SIMULATION WITH SPECTRA
-
-![WPS Photos(11)](https://github.com/CalebSamraj14/VLSI-LAB-EXP-6/assets/163808923/ca0d0123-8544-4693-9377-1702e4058300)
-
-# RESULT
-The schematic and simulate inverter using CADENCE is done and verified successfully.
